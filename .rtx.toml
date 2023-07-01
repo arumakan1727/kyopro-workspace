@@ -1,0 +1,5 @@
+[env]
+env_file = ".env"
+
+[tools]
+python = { version="3.6", virtualenv=".venv" }

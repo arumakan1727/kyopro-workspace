@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "kyopro-workspace"
+version = "0.1.0"
+description = ""
+authors = ["arumakan1727 <33191176+arumakan1727@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "kyopro_workspace"}]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+[tool.poetry.group.dev.dependencies]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+include = '\.py$'
+exclude = '''
+(
+  \.eggs
+| \.git
+| \.hg
+| \.mypy_cache
+| \.tox
+| \.venv
+| \.idea
+| \.vscode
+| venv
+| _build
+| buck-out
+| build
+| dist
+| migrations
+)
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 120

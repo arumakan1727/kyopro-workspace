@@ -1,3 +1,9 @@
 Language: Cpp
 BasedOnStyle: Chromium
 ColumnLimit: 100
+
+InsertBraces: true
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortLambdasOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortLoopsOnASingleLine: true

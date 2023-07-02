@@ -1,7 +1,7 @@
 [env]
 env_file = ".env"
 KPR_REPO_ROOT = '{{config_root}}'
-KPR_CXX_COMMON_FLAGS = '-std=c++17 -I{{config_root}}/include -Wall -Wextra -Wconversion -Wshadow -Wfloat-equal -Wno-char-subscripts'
+KPR_CXX_COMMON_FLAGS = '-std=c++17 -I{{config_root}}/include -Wall -Wextra -Wconversion -Wshadow -Wfloat-equal -Wno-char-subscripts -Wno-unused-const-variable'
 KPR_CXX_DEBUG_FLAGS = '-g -Og -DARMKN_DEBUG -fno-omit-frame-pointer -fsanitize=address,undefined'
 KPR_CXX_RELEASE_FLAGS = '-O2 -mtune=native -march=native'
 KPR_CXX_REL_WITH_CHECK_FLAGS = '-O2 -mtune=native -march=native -g -fno-omit-frame-pointer -fsanitize=address,undefined'

@@ -18,7 +18,7 @@ stderr_capture_max_bytes = 4096
 
 [[test.command]]
 pattern = '*.cpp'
-compile = 'make a.out'
+compile = 'make build/cpp/debug'
 run = './a.out'
 
 [[test.command]]

@@ -77,16 +77,16 @@ struct Printer {
   inline Printer ends(const char* end) const {
     return Printer(_out, _sep, end);
   }
-
 } print;
 
 void solve() {
-  print("hello");
+  /*  ฅ^•ω•^ฅ  (ﾆｬｰ */
 }
 
 int main() {
   std::ios::sync_with_stdio(false);
   std::cin.tie(nullptr);
+  std::cout << std::ios::fixed << std::setprecision(12);
   solve();
   return 0;
 }

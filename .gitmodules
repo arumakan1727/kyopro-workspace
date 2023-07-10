@@ -1,0 +1,3 @@
+[submodule "external/arumakan1727/kyopro-cpplib"]
+	path = external/arumakan1727/kyopro-cpplib
+	url = https://github.com/arumakan1727/kyopro-cpplib

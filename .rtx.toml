@@ -5,12 +5,20 @@ KPR_CXX_COMMON_FLAGS = """
   -std=c++17 \
   -I{{config_root}}/include \
   -Wall -Wextra \
-  -Wconversion -Wshadow -Wfloat-equal \
-  -Wno-char-subscripts -Wno-unused-const-variable \
+  -Wfloat-equal \
+  -Winit-self
+  -Winvalid-pch
+  -Wmissing-include-dirs
+  -Wshadow \
+  -Wswitch-enum \
+  -Wconversion
+  -Wno-sign-conversion \
+  -Wno-char-subscripts \
+  -Wno-unused-const-variable \
 """
-KPR_CXX_DEBUG_FLAGS = '-g -Og -DARMKN_DEBUG -fno-omit-frame-pointer -fsanitize=address,undefined'
+KPR_CXX_DEBUG_FLAGS = '-g -Og -DARMKN_DEBUG -fno-omit-frame-pointer -fsanitize=address,undefined -fno-sanitize-recover'
 KPR_CXX_RELEASE_FLAGS = '-O2 -mtune=native -march=native'
-KPR_CXX_REL_WITH_CHECK_FLAGS = '-O2 -mtune=native -march=native -g -fno-omit-frame-pointer -fsanitize=address,undefined'
+KPR_CXX_REL_WITH_CHECK_FLAGS = '-O2 -mtune=native -march=native -g -fno-omit-frame-pointer -fsanitize=address,undefined -fno-sanitize-recover'
 
 [tools]
 python = { version="3.6", virtualenv=".venv" }

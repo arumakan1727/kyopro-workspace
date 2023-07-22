@@ -4,15 +4,16 @@ BITS_STDCPP_H := include/bits/stdc++.h
 
 .PHONY:	setup
 setup:
-	echo $$KPR_CXX_COMMON_FLAGS | tr -s ' ' '\n' > compile_flags.txt
 	[ -e ./external/arumakan1727/kyopro-cpplib/.git ] || git submodule update --init
-	make pre-compile
+	make compile_flags.txt pre-compile
+
 
 .PHONY:	update
 update:
 	git pull --ff-only
 	git submodule update
-	make pre-compile
+	make compile_flags.txt pre-compile
+	make lint
 
 
 .PHONY:	pre-compile
@@ -20,6 +21,16 @@ pre-compile:	\
 	$(BITS_STDCPP_PCH_DIR)/debug.pch \
 	$(BITS_STDCPP_PCH_DIR)/release.pch \
 	$(BITS_STDCPP_PCH_DIR)/rel_with_check.pch \
+
+
+.PHONY:	lint
+lint:
+	clang++ -fsyntax-only -Werror $$KPR_CXX_COMMON_FLAGS $$KPR_CXX_DEBUG_FLAGS template/main.cpp
+
+
+compile_flags.txt:	Makefile .rtx.toml
+	echo $$KPR_CXX_COMMON_FLAGS | tr -s ' ' '\n' > compile_flags.txt
+
 
 $(BITS_STDCPP_PCH_DIR)/debug.pch:	$(BITS_STDCPP_H) Makefile .rtx.toml
 	@mkdir -p $(BITS_STDCPP_PCH_DIR)

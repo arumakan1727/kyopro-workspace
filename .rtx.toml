@@ -1,14 +1,15 @@
 [env]
 env_file = ".env"
 KPR_REPO_ROOT = '{{config_root}}'
-KPR_CXX_COMMON_FLAGS = """
+KPR_CXX_COMMON_FLAGS = """\
   -std=c++17 \
   -I{{config_root}}/include \
-  -Wall -Wextra \
+  -Wall \
+  -Wextra \
   -Wfloat-equal \
-  -Winit-self
-  -Winvalid-pch
-  -Wmissing-include-dirs
+  -Winit-self \
+  -Winvalid-pch \
+  -Wmissing-include-dirs \
   -Wshadow \
   -Wswitch-enum \
   -Wconversion

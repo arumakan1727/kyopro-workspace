@@ -110,19 +110,17 @@ class RunlengthBlock(tuple, Generic[Tp1]):
         return self
 
 
-def runlength(xs: Sequence[Tp1]) -> List[RunlengthBlock[Tp1]]:
+def runlength(xs: Sequence[Tp1]) -> Generator[RunlengthBlock[Tp1], None, None]:
     if len(xs) == 0:
-        return []
+        return
 
-    res: list[RunlengthBlock[Tp1]] = []
     last, begin = xs[0], 0
     for i, x in enumerate(xs):
         if x != last:
-            res.append(RunlengthBlock(val=last, begin=begin, len=i - begin))
+            yield RunlengthBlock(val=last, begin=begin, len=i - begin)
             last, begin = x, i
 
-    res.append(RunlengthBlock(val=last, begin=begin, len=len(xs) - begin))
-    return res
+    yield RunlengthBlock(val=last, begin=begin, len=len(xs) - begin)
 
 
 def pairwise(itr: Iterable[Tp1]) -> Generator[Tuple[Tp1, Tp1], None, None]:

@@ -29,7 +29,7 @@ lint:
 
 
 compile_flags.txt:	Makefile .rtx.toml
-	echo $$KPR_CXX_COMMON_FLAGS | tr -s ' ' '\n' > compile_flags.txt
+	echo $$KPR_CXX_COMMON_FLAGS -DARMKN_DEBUG | tr -s ' ' '\n' > compile_flags.txt
 
 
 $(BITS_STDCPP_PCH_DIR)/debug.pch:	$(BITS_STDCPP_H) Makefile .rtx.toml

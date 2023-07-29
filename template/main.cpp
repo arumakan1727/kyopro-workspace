@@ -13,8 +13,6 @@
 #define DBG(...) ((void)0)
 #define DBGV(...) (__VA_ARGS__)
 #define DBG_SET_OUTPUT(ostream) ((void)0)
-#define DBG_ENABLE_COLOR() ((void)0)
-#define DBG_DISABLE_COLOR() ((void)0)
 #endif
 
 using namespace std;

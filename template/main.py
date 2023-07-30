@@ -20,10 +20,6 @@ def main() -> None:
     pass
 
 
-def Yes(x):
-    return "Yes" if x else "No"
-
-
 def divup(a: int, b: int):
     return (a + b - 1) // b
 
@@ -33,7 +29,7 @@ def diff(a: int, b: int):
 
 
 def sigma(a: int, b: int):
-    return (a + b) * (b - a + 1) // 2
+    return (a + b) * (b - a + 1) >> 1
 
 
 def lcm(a: int, b: int):

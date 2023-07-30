@@ -23,7 +23,7 @@ shell = '/bin/sh'
 include = '[mM]ain.*'
 compile_before_run = true
 stdout_capture_max_bytes = 4096
-stderr_capture_max_bytes = 4096
+stderr_capture_max_bytes = 100000
 
 [[test.command]]
 pattern = '*.cpp'

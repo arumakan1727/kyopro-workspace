@@ -2,6 +2,8 @@
 /compile_flags.txt
 /tmp/
 build/
+/workspace/
+/vault/
 
 
 .env

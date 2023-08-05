@@ -1,6 +1,7 @@
 SHELL := /usr/bin/env bash -eu
 BITS_STDCPP_PCH_DIR := include/bits/stdc++.h.pch
 BITS_STDCPP_H := include/bits/stdc++.h
+PCH_DEPS := $(BITS_STDCPP_H) Makefile .rtx.toml external/arumakan1727/kyopro-cpplib/.git/HEAD
 
 .PHONY:	setup
 setup:
@@ -32,15 +33,15 @@ compile_flags.txt:	Makefile .rtx.toml
 	echo $$KPR_CXX_COMMON_FLAGS -DARMKN_DEBUG | tr -s ' ' '\n' > compile_flags.txt
 
 
-$(BITS_STDCPP_PCH_DIR)/debug.pch:	$(BITS_STDCPP_H) Makefile .rtx.toml
+$(BITS_STDCPP_PCH_DIR)/debug.pch:	$(PCH_DEPS)
 	@mkdir -p $(BITS_STDCPP_PCH_DIR)
 	clang++ -x c++-header $$KPR_CXX_COMMON_FLAGS $$KPR_CXX_DEBUG_FLAGS $< -o $@
 
-$(BITS_STDCPP_PCH_DIR)/release.pch:	$(BITS_STDCPP_H) Makefile .rtx.toml
+$(BITS_STDCPP_PCH_DIR)/release.pch:	$(PCH_DEPS)
 	@mkdir -p $(BITS_STDCPP_PCH_DIR)
 	clang++ -x c++-header $$KPR_CXX_COMMON_FLAGS $$KPR_CXX_RELEASE_FLAGS $< -o $@
 
-$(BITS_STDCPP_PCH_DIR)/rel_with_check.pch:	$(BITS_STDCPP_H) Makefile .rtx.toml
+$(BITS_STDCPP_PCH_DIR)/rel_with_check.pch:	$(PCH_DEPS)
 	@mkdir -p $(BITS_STDCPP_PCH_DIR)
 	clang++ -x c++-header $$KPR_CXX_COMMON_FLAGS $$KPR_CXX_REL_WITH_CHECK_FLAGS $< -o $@
 

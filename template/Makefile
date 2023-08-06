@@ -1,11 +1,19 @@
+.DEFAULT_GOAL := run
 SHELL := /usr/bin/env bash -eu
 PCH_DIR := $$KPR_REPO_ROOT/include/bits/stdc++.h.pch
 SRCS := main.cpp
 
-.PHONY:	clean
+.PHONY:	clean run
+
 clean:
 	rm -rf build a.out
 
+run:	a.out
+	@echo >&2 "::: Running $(shell readlink $<) :::"
+	@./a.out
+
+a.out:	$(SRCS)
+	make build/cpp/debug
 
 build/cpp/debug:	$(SRCS)
 	@mkdir -p $(dir $@)

@@ -1,7 +1,7 @@
 SHELL := /usr/bin/env bash -eu
 BITS_STDCPP_PCH_DIR := include/bits/stdc++.h.pch
 BITS_STDCPP_H := include/bits/stdc++.h
-PCH_DEPS := $(BITS_STDCPP_H) Makefile .rtx.toml external/arumakan1727/kyopro-cpplib/.git/HEAD
+PCH_DEPS := $(BITS_STDCPP_H) Makefile .rtx.toml external/arumakan1727/kyopro-cpplib/.git/refs/heads/main
 
 .PHONY:	setup
 setup:

@@ -3,6 +3,7 @@
 #include <armkn/util/fn/chminmax.hpp>
 #include <armkn/util/fn/diff.hpp>
 #include <armkn/util/fn/divup.hpp>
+#include <armkn/util/macro/fn.hpp>
 #include <armkn/util/macro/iter_all.hpp>
 #include <armkn/util/macro/rep.hpp>
 #define INF 0x3f3f3f3f

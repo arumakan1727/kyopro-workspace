@@ -16,7 +16,9 @@ header_search_dirs = [
 expansion_targets = [
   "armkn/**/*.hpp"
 ]
-expansion_ignores = []
+expansion_ignores = [
+  "atcoder/**/*"
+]
 
 [test]
 shell = '/bin/sh'
@@ -43,6 +45,6 @@ apply_expander = true
 #   `kpr langs atcoder`
 [submit.lang]
 atcoder = [
-  { pattern = '*.cpp', lang = 'C++ (GCC 9.2.1)' },
-  { pattern = '*.py', lang = 'PyPy3 (7.3.0)' },
+  { pattern = '*.cpp', lang = 'C++ 20 (gcc 12.2)' },
+  { pattern = '*.py', lang = 'Python (PyPy 3.10-v7.3.12)' },
 ]

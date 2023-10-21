@@ -5,7 +5,7 @@ import sys
 from bisect import bisect_left, bisect_right
 from collections import Counter, defaultdict, deque
 from heapq import heapify, heappop, heappush, heappushpop
-from math import gcd
+from math import gcd, lcm
 from string import ascii_lowercase, ascii_uppercase
 from typing import Generator, Generic, Iterable, List, NamedTuple, Sequence, Tuple, TypeVar
 
@@ -31,10 +31,6 @@ def diff(a: int, b: int):
 
 def sigma(a: int, b: int):
     return (a + b) * (b - a + 1) >> 1
-
-
-def lcm(a: int, b: int):
-    return a // gcd(a, b) * b
 
 
 def clamp(x: int, lower: int, upper: int):

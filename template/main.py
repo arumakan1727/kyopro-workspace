@@ -10,6 +10,7 @@ from string import ascii_lowercase, ascii_uppercase
 from typing import Generator, Generic, Iterable, List, NamedTuple, Sequence, Tuple, TypeVar
 
 INF = 1 << 62
+sys.set_int_max_str_digits(5_000_000)
 Tp1 = TypeVar("Tp1")
 Tp2 = TypeVar("Tp2")
 

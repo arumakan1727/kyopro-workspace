@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "kyopro_workspace"}]
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "~3.11"
 
 [tool.poetry.group.dev.dependencies]
 
